@@ -1,7 +1,6 @@
-import Head from "next/head";
-import styles from "@/styles/Home.module.css";
-import { useEffect, useState } from "react";
+import { Avatar, Box, Paper, Typography } from "@mui/material";
 import { GetServerSideProps, NextPage } from "next";
+import Head from "next/head";
 import Image from "next/image";
 
 type User = {
@@ -42,8 +41,6 @@ type User = {
 type IProps = { user: User };
 
 const Home: NextPage<IProps> = ({ user }) => {
-    console.log(user);
-
     return (
         <>
             <Head>
@@ -58,20 +55,50 @@ const Home: NextPage<IProps> = ({ user }) => {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main className={styles.main}>
-                <div className={styles.profile}>
-                    <div className={styles.avatar_wrapper}>
-                        <div className={styles.avatar}>
+            <Box
+                sx={{
+                    minHeight: "100vh",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+            >
+                <Paper
+                    sx={{
+                        padding: 4,
+                    }}
+                >
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            justifyContent: "center",
+                        }}
+                    >
+                        <Avatar
+                            sx={{
+                                width: "6rem",
+                                height: "6rem",
+                                marginInline: "auto",
+                            }}
+                        >
                             <Image
                                 fill
                                 src={user.avatar_url}
                                 alt="avatar url"
                             />
-                        </div>
-                        <span className={styles.username}>{user.login}</span>
-                    </div>
-                </div>
-            </main>
+                        </Avatar>
+                        <Typography
+                            sx={{
+                                textAlign: "center",
+                                padding: 2,
+                            }}
+                        >
+                            {user.login}
+                        </Typography>
+                    </Box>
+                </Paper>
+            </Box>
         </>
     );
 };
