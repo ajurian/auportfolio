@@ -13,6 +13,11 @@ type HomeProps = {
 };
 
 const Home: NextPage<HomeProps> = ({ authUser, authPass, apiKey }) => {
+    console.log("[code]: Home page rerendering...");
+    console.log(
+        `[code]: authUser ${!!authUser} | authPass ${!!authPass} | apiKey ${!!apiKey}`
+    );
+
     return (
         <>
             <Head>
@@ -38,6 +43,11 @@ const Home: NextPage<HomeProps> = ({ authUser, authPass, apiKey }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
+    console.log("[code]: Server side props called...");
+    console.log(
+        `[code]: ${process.env.AUTH_USER} | ${process.env.AUTH_PASS} | ${process.env.API_KEY}`
+    );
+
     return {
         props: {
             authUser: process.env.AUTH_USER,
