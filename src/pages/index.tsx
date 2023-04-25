@@ -1,46 +1,18 @@
-import { Avatar, Box, Paper, Typography } from "@mui/material";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
+import Main from "@/components/Main";
+import { Divider } from "@mui/joy";
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
-import Image from "next/image";
+import { ToastContainer } from "react-toastify";
 
-type User = {
-    login: string;
-    id: number;
-    node_id: string;
-    avatar_url: string;
-    gravatar_id: string;
-    url: string;
-    html_url: string;
-    followers_url: string;
-    following_url: string;
-    gists_url: string;
-    starred_url: string;
-    subscriptions_url: string;
-    organizations_url: string;
-    repos_url: string;
-    events_url: string;
-    received_events_url: string;
-    type: string;
-    site_admin: boolean;
-    name: string;
-    company: string;
-    blog: string;
-    location: string;
-    email: string;
-    hireable: null;
-    bio: string;
-    twitter_username: string;
-    public_repos: number;
-    public_gists: number;
-    followers: number;
-    following: number;
-    created_at: string;
-    updated_at: string;
+type HomeProps = {
+    authUser: string;
+    authPass: string;
+    apiKey: string;
 };
 
-type IProps = { user: User };
-
-const Home: NextPage<IProps> = ({ user }) => {
+const Home: NextPage<HomeProps> = ({ authUser, authPass, apiKey }) => {
     return (
         <>
             <Head>
@@ -55,102 +27,24 @@ const Home: NextPage<IProps> = ({ user }) => {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Box
-                sx={{
-                    minHeight: "100vh",
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                }}
-            >
-                <Paper
-                    sx={{
-                        padding: 4,
-                    }}
-                >
-                    <Box
-                        sx={{
-                            display: "flex",
-                            flexDirection: "column",
-                            justifyContent: "center",
-                        }}
-                    >
-                        <Avatar
-                            sx={{
-                                width: "6rem",
-                                height: "6rem",
-                                marginInline: "auto",
-                            }}
-                        >
-                            <Image
-                                fill
-                                src={user.avatar_url}
-                                alt="avatar url"
-                            />
-                        </Avatar>
-                        <Typography
-                            sx={{
-                                textAlign: "center",
-                                padding: 2,
-                            }}
-                        >
-                            {user.login}
-                        </Typography>
-                    </Box>
-                </Paper>
-            </Box>
+            <Header />
+            <Divider />
+            <Main />
+            <Divider />
+            <Footer authUser={authUser} authPass={authPass} apiKey={apiKey} />
+            <ToastContainer />
         </>
     );
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-    const data = await fetch("https://api.github.com/users/ajurian");
-    let user;
-
-    if (data.status === 403) {
-        user = {
-            login: "ajurian",
-            id: 73010085,
-            node_id: "MDQ6VXNlcjczMDEwMDg1",
-            avatar_url: "https://avatars.githubusercontent.com/u/73010085?v=4",
-            gravatar_id: "",
-            url: "https://api.github.com/users/ajurian",
-            html_url: "https://github.com/ajurian",
-            followers_url: "https://api.github.com/users/ajurian/followers",
-            following_url:
-                "https://api.github.com/users/ajurian/following{/other_user}",
-            gists_url: "https://api.github.com/users/ajurian/gists{/gist_id}",
-            starred_url:
-                "https://api.github.com/users/ajurian/starred{/owner}{/repo}",
-            subscriptions_url:
-                "https://api.github.com/users/ajurian/subscriptions",
-            organizations_url: "https://api.github.com/users/ajurian/orgs",
-            repos_url: "https://api.github.com/users/ajurian/repos",
-            events_url: "https://api.github.com/users/ajurian/events{/privacy}",
-            received_events_url:
-                "https://api.github.com/users/ajurian/received_events",
-            type: "User",
-            site_admin: false,
-            name: null,
-            company: null,
-            blog: "",
-            location: null,
-            email: null,
-            hireable: null,
-            bio: null,
-            twitter_username: null,
-            public_repos: 12,
-            public_gists: 0,
-            followers: 0,
-            following: 0,
-            created_at: "2020-10-17T04:29:50Z",
-            updated_at: "2023-04-20T12:39:04Z",
-        };
-    } else {
-        user = await data.json();
-    }
-
-    return { props: { user } };
+    return {
+        props: {
+            authUser: process.env.AUTH_USER,
+            authPass: process.env.AUTH_PASS,
+            apiKey: process.env.API_KEY,
+        },
+    };
 };
 
 export default Home;
