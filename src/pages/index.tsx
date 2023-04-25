@@ -4,6 +4,7 @@ import Main from "@/components/Main";
 import { Divider } from "@mui/joy";
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
+import { useRef } from "react";
 import { ToastContainer } from "react-toastify";
 
 type HomeProps = {
@@ -13,11 +14,6 @@ type HomeProps = {
 };
 
 const Home: NextPage<HomeProps> = ({ authUser, authPass, apiKey }) => {
-    console.log("[code]: Home page rerendering...");
-    console.log(
-        `[code]: authUser ${!!authUser} | authPass ${!!authPass} | apiKey ${!!apiKey}`
-    );
-
     return (
         <>
             <Head>

@@ -5,9 +5,14 @@ type SectionProps = BoxProps & {
     title: string;
 };
 
-const Section: React.FC<SectionProps> = ({ title, className, children }) => {
+const Section: React.FC<SectionProps> = ({
+    title,
+    className,
+    children,
+    ...props
+}) => {
     return (
-        <Box className={`section ${className}`} component="div">
+        <Box className={`section ${className}`} component="div" {...props}>
             <Typography className="section-title" level="h3">
                 {title}
             </Typography>

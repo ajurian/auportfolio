@@ -6,7 +6,7 @@ import Nav from "./Nav";
 
 const Header: React.FC = () => {
     return (
-        <Box sx={headerStyle} component="header">
+        <Box component="header" sx={headerStyle}>
             <Nav />
             <Banner />
         </Box>

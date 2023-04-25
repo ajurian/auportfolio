@@ -1,7 +1,7 @@
 import footerStyle from "@/styles/Footer";
 import { Box, Button, Textarea, Typography } from "@mui/joy";
 import axios from "axios";
-import {
+import React, {
     ChangeEventHandler,
     FormEventHandler,
     useCallback,
@@ -53,8 +53,8 @@ const Footer: React.FC<FooterProps> = ({ authUser, authPass, apiKey }) => {
     );
 
     return (
-        <Box sx={footerStyle} component="footer">
-            <Box className="contact" component="form" onSubmit={submitHandler}>
+        <Box component="footer" sx={footerStyle}>
+            <Box className="contact" id="contact" component="form" onSubmit={submitHandler}>
                 <Typography level="h4">Contact</Typography>
                 <Textarea
                     placeholder="Minimum 10 characters"

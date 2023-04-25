@@ -23,24 +23,24 @@ const Skill: React.FC<SkillProps> = ({ level, name }) => {
             bellowMd ? (
                 <CircularProgress
                     determinate
-                    color="neutral"
+                    color="primary"
                     size="lg"
                     value={level}
                     sx={{ alignSelf: "center" }}
                 >
-                    <Typography>{level}%</Typography>
+                    <Typography color="primary">{level}%</Typography>
                 </CircularProgress>
             ) : (
                 <LinearProgress
                     determinate
-                    color="neutral"
+                    color="primary"
                     size="lg"
                     thickness={20}
                     value={level}
                     sx={{ width: "16rem" }}
                 >
                     <Typography
-                        textColor="common.white"
+                        textColor="success.100"
                         sx={{ mixBlendMode: "difference" }}
                     >
                         {level}%
@@ -88,7 +88,7 @@ const SkillCategory: React.FC<SkillCategoryProps> = ({ name, children }) => {
 
 const Skills = () => {
     return (
-        <Section title="Skills" className="skills">
+        <Section title="Skills" className="skills" id="skills">
             <Box className="skills-main" component="div">
                 <SkillCategory name="Web development">
                     <Skill level={88} name="Frontend" />
