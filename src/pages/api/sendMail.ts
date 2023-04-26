@@ -8,6 +8,10 @@ type RequestData = {
     message: string;
 };
 
+export const config = {
+    runtime: "edge",
+};
+
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const body: RequestData = req.body;
     const { authUser, authPass, apiKey, message } = body;
