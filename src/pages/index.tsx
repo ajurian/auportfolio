@@ -38,16 +38,11 @@ const Home: NextPage<HomeProps> = ({ authUser, authPass, apiKey }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (ctx) => {
-    /* console.log("[code]: Server side props called...");
-    console.log(
-        `[code]: ${process.env.AUTH_USER} | ${process.env.AUTH_PASS} | ${process.env.API_KEY}`
-    ); */
-
     return {
         props: {
-            /* authUser: process.env.AUTH_USER,
+            authUser: process.env.AUTH_USER,
             authPass: process.env.AUTH_PASS,
-            apiKey: process.env.API_KEY, */
+            apiKey: process.env.API_KEY,
         },
     };
 };
