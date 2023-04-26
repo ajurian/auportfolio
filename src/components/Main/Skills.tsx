@@ -9,12 +9,12 @@ import { useMediaQuery } from "@mui/material";
 import React, { useMemo } from "react";
 import Section from "./Section";
 
-type SkillProps = {
+type SkillItemProps = {
     level: number;
     name: string;
 };
 
-const Skill: React.FC<SkillProps> = ({ level, name }) => {
+const SkillItem: React.FC<SkillItemProps> = ({ level, name }) => {
     const theme = useTheme();
     const bellowMd = useMediaQuery(theme.breakpoints.down("md"));
 
@@ -23,24 +23,24 @@ const Skill: React.FC<SkillProps> = ({ level, name }) => {
             bellowMd ? (
                 <CircularProgress
                     determinate
-                    color="primary"
+                    color="neutral"
                     size="lg"
                     value={level}
                     sx={{ alignSelf: "center" }}
                 >
-                    <Typography color="primary">{level}%</Typography>
+                    <Typography color="neutral">{level}%</Typography>
                 </CircularProgress>
             ) : (
                 <LinearProgress
                     determinate
-                    color="primary"
+                    color="neutral"
                     size="lg"
                     thickness={20}
                     value={level}
                     sx={{ width: "16rem" }}
                 >
                     <Typography
-                        textColor="success.100"
+                        textColor="common.white"
                         sx={{ mixBlendMode: "difference" }}
                     >
                         {level}%
@@ -65,12 +65,12 @@ const Skill: React.FC<SkillProps> = ({ level, name }) => {
     );
 };
 
-type SkillCategoryProps = {
+type SkillListProps = {
     name: string;
     children?: React.ReactNode;
 };
 
-const SkillCategory: React.FC<SkillCategoryProps> = ({ name, children }) => {
+const SkillList: React.FC<SkillListProps> = ({ name, children }) => {
     return (
         <Box className="skills-category" component="div">
             <Typography
@@ -90,17 +90,17 @@ const Skills = () => {
     return (
         <Section title="Skills" className="skills" id="skills">
             <Box className="skills-main" component="div">
-                <SkillCategory name="Web development">
-                    <Skill level={88} name="Frontend" />
-                    <Skill level={79} name="Backend" />
-                    <Skill level={70} name="Web design" />
-                    <Skill level={82} name="React" />
-                </SkillCategory>
-                <SkillCategory name="Other">
-                    <Skill level={85} name="Java" />
-                    <Skill level={84} name="C#" />
-                    <Skill level={90} name="Python" />
-                </SkillCategory>
+                <SkillList name="Web development">
+                    <SkillItem level={88} name="Frontend" />
+                    <SkillItem level={79} name="Backend" />
+                    <SkillItem level={70} name="Web design" />
+                    <SkillItem level={82} name="React" />
+                </SkillList>
+                <SkillList name="Other">
+                    <SkillItem level={85} name="Java" />
+                    <SkillItem level={84} name="C#" />
+                    <SkillItem level={90} name="Python" />
+                </SkillList>
             </Box>
         </Section>
     );

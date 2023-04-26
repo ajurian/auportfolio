@@ -21,7 +21,7 @@ const NavButton: React.FC<NavButtonProps> = ({
     children,
 }) => {
     const variant = useMemo<ButtonTypeMap["props"]["variant"]>(
-        () => (transparentNav ? "solid" : "plain"),
+        () => (transparentNav ? "plain" : "plain"),
         [transparentNav]
     );
 

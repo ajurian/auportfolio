@@ -30,6 +30,9 @@ const navStyle: NestedSxProps<Theme> = (theme) => ({
             transition:
                 "color 150ms ease-in-out 50ms, background 150ms ease-in-out 50ms",
         },
+        "& .MuiButton-root:hover, .MuiButton-root:active": {
+            color: theme.vars.palette.common.black,
+        },
     },
     [theme.breakpoints.down("sm")]: {
         justifyContent: "center",

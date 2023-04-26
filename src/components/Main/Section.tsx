@@ -13,7 +13,7 @@ const Section: React.FC<SectionProps> = ({
 }) => {
     return (
         <Box className={`section ${className}`} component="div" {...props}>
-            <Typography className="section-title" level="h3">
+            <Typography className="section-title" level="h4">
                 {title}
             </Typography>
             {children}

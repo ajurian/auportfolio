@@ -21,8 +21,11 @@ const mainStyle: SxProps<Theme> = (theme) => ({
     },
     "& .skills": skillsStyle,
     "& .projects": projectsStyle,
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down("laptop")]: {
         paddingInline: 8,
+    },
+    [theme.breakpoints.down("sm")]: {
+        paddingInline: 4,
     },
 });
 

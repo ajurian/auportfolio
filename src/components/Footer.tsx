@@ -54,7 +54,12 @@ const Footer: React.FC<FooterProps> = ({ authUser, authPass, apiKey }) => {
 
     return (
         <Box component="footer" sx={footerStyle}>
-            <Box className="contact" id="contact" component="form" onSubmit={submitHandler}>
+            <Box
+                className="contact"
+                id="contact"
+                component="form"
+                onSubmit={submitHandler}
+            >
                 <Typography level="h4">Contact</Typography>
                 <Textarea
                     placeholder="Minimum 10 characters"
