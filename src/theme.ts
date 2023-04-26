@@ -1,5 +1,4 @@
 import { extendTheme } from "@mui/joy/styles";
-import Link from "next/link";
 
 declare module "@mui/joy/styles" {
     interface BreakpointOverrides {
@@ -12,12 +11,6 @@ declare module "@mui/joy/styles" {
         lg: true;
         desktop: true;
         xl: true;
-    }
-}
-
-declare module "@mui/joy/Button" {
-    interface ButtonPropsVariantOverrides {
-        transparent: true;
     }
 }
 
@@ -34,11 +27,6 @@ const theme = extendTheme({
             lg: 1200,
             desktop: 1200,
             xl: 1536,
-        },
-    },
-    components: {
-        JoyButton: {
-            styleOverrides: {},
         },
     },
 });

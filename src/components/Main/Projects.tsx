@@ -1,6 +1,5 @@
 import { LaunchRounded } from "@mui/icons-material";
 import { AspectRatio, Box, Card, IconButton, Link, Typography } from "@mui/joy";
-import Image from "next/image";
 import NextLink from "next/link";
 import Section from "./Section";
 

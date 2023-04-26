@@ -1,8 +1,8 @@
 import mainStyle from "@/styles/Main";
 import { Box } from "@mui/joy";
+import React from "react";
 import Projects from "./Projects";
 import Skills from "./Skills";
-import React from "react";
 
 const Main: React.FC = () => {
     return (
