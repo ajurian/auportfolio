@@ -9,7 +9,7 @@ type RequestData = {
 };
 
 export const config = {
-    runtime: "edge",
+    runtime: "nodejs",
 };
 
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
