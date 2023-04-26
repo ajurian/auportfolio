@@ -5,7 +5,7 @@ const nextConfig = {
         domains: ["avatars.githubusercontent.com"],
     },
     experimental: {
-        runtime: "edge",
+        runtime: "experimental-edge",
     },
 };
 
