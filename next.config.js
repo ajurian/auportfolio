@@ -4,6 +4,9 @@ const nextConfig = {
     images: {
         domains: ["avatars.githubusercontent.com"],
     },
+    experimental: {
+        runtime: "edge",
+    },
 };
 
 module.exports = nextConfig;
