@@ -5,6 +5,7 @@ import {
     Typography,
     useTheme,
 } from "@mui/joy";
+import { TextColor } from "@mui/joy/styles/types";
 import { useMediaQuery } from "@mui/material";
 import React, { useMemo } from "react";
 import Section from "./Section";
@@ -17,6 +18,12 @@ type SkillItemProps = {
 const SkillItem: React.FC<SkillItemProps> = ({ level, name }) => {
     const theme = useTheme();
     const bellowMd = useMediaQuery(theme.breakpoints.down("md"));
+    const { colorScheme } = theme.palette;
+
+    const linearProgressColor = useMemo<TextColor>(
+        () => (colorScheme === "light" ? "background.level1" : "text.primary"),
+        [colorScheme]
+    );
 
     const ProgressComponent = useMemo(
         () =>
@@ -28,7 +35,7 @@ const SkillItem: React.FC<SkillItemProps> = ({ level, name }) => {
                     value={level}
                     sx={{ alignSelf: "center" }}
                 >
-                    <Typography color="neutral">{level}%</Typography>
+                    <Typography textColor="text.primary">{level}%</Typography>
                 </CircularProgress>
             ) : (
                 <LinearProgress
@@ -40,14 +47,14 @@ const SkillItem: React.FC<SkillItemProps> = ({ level, name }) => {
                     sx={{ width: "16rem" }}
                 >
                     <Typography
-                        textColor="common.white"
+                        textColor={linearProgressColor}
                         sx={{ mixBlendMode: "difference" }}
                     >
                         {level}%
                     </Typography>
                 </LinearProgress>
             ),
-        [bellowMd, level]
+        [linearProgressColor, bellowMd, level]
     );
 
     return (

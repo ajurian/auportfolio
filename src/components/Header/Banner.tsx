@@ -19,7 +19,7 @@ const Banner: React.FC = () => {
                 <Typography textColor="common.white" level={level}>
                     Lorem ipsum
                 </Typography>
-                <Typography textColor="background.level3" level="body1">
+                <Typography textColor="common.white" level="body1">
                     Sit pariatur in commodo excepteur. Ullamco qui ullamco non
                     sit ex cillum duis ullamco et eiusmod. Aute duis commodo
                     Lorem sunt officia commodo esse amet ex ipsum deserunt

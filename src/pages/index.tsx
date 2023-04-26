@@ -1,7 +1,7 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import Main from "@/components/Main";
-import { Divider } from "@mui/joy";
+import { Divider, useColorScheme } from "@mui/joy";
 import { GetServerSideProps, NextPage } from "next";
 import Head from "next/head";
 import { ToastContainer } from "react-toastify";

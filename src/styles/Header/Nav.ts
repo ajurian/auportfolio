@@ -15,10 +15,10 @@ const navStyle: NestedSxProps<Theme> = (theme) => ({
     border: "none",
     transition:
         "background 150ms ease-in-out 50ms, box-shadow 150ms ease-in-out 50ms",
-    backgroundColor: theme.vars.palette.common.white,
+    backgroundColor: theme.vars.palette.background.level1,
     boxShadow: theme.vars.shadow.sm,
     "& .MuiButton-root": {
-        color: theme.vars.palette.common.black,
+        color: theme.vars.palette.text.primary,
         transition:
             "color 150ms ease-in-out 50ms, background 150ms ease-in-out 50ms",
     },
@@ -31,7 +31,7 @@ const navStyle: NestedSxProps<Theme> = (theme) => ({
                 "color 150ms ease-in-out 50ms, background 150ms ease-in-out 50ms",
         },
         "& .MuiButton-root:hover, .MuiButton-root:active": {
-            color: theme.vars.palette.common.black,
+            color: theme.vars.palette.text.primary,
         },
     },
     [theme.breakpoints.down("sm")]: {
