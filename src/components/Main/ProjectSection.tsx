@@ -71,7 +71,7 @@ const ProjectCard = ({
                 </CardContent>
             )}
             <CardFooter className="flex gap-2">
-                {githubURL !== undefined && (
+                {githubURL && (
                     <Button variant="outline" className="ml-auto" asChild>
                         <Link
                             href={githubURL}
@@ -86,7 +86,7 @@ const ProjectCard = ({
                         </Link>
                     </Button>
                 )}
-                {liveURL !== undefined && (
+                {liveURL && (
                     <Button variant="outline" asChild>
                         <Link
                             href={liveURL}
