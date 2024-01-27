@@ -10,6 +10,7 @@
         "title": "Kripton Admin Dashboard",
         "description": "A project that mainly focuses on implementing existing design into react.js with reusable components. This design is from Peterdraw https://www.figma.com/community/file/1222112795133261547.",
         "githubURL": "https://github.com/ajurian/todo-board",
+        "liveURL": "https://kripton-admin-dashboard.vercel.app/",
         "thumbnailURL": "/images/kripton_admin_dashboard.png"
     },
     {
