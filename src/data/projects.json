@@ -19,13 +19,13 @@
         "githubURL": "https://github.com/ajurian/express-jwt"
     },
     {
-        "title": "ExpressJS with Json Web Tokens",
+        "title": "Realtime Chat",
         "description": "A fullstack chat application that uses web sockets with socket.io to make realtime updates.",
         "githubURL": "https://github.com/ajurian/realtime-chat",
         "thumbnailURL": "/images/realtime_chat.png"
     },
     {
-        "title": "ExpressJS with Json Web Tokens",
+        "title": "React Todo",
         "description": "A simple website that lets you manage tasks.",
         "githubURL": "https://github.com/ajurian/react-todo",
         "thumbnailURL": "/images/react_todo.png"
