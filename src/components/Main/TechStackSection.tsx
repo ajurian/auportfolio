@@ -36,6 +36,7 @@ export default function TechStackSection() {
                 <TechStackItem iconName="github" />
                 <TechStackItem iconName="firefox-dev" />
                 <TechStackItem iconName="firebase" />
+                <TechStackItem iconName="mongodb" />
             </div>
         </section>
     );

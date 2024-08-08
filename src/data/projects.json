@@ -1,5 +1,12 @@
 [
     {
+        "title": "TaskBoard",
+        "description": "A realtime fullstack web application using Next.js with MongoDB as the database. Greater user experience than 'Todo Board' as it does not requires prompt every edit. Board can be shared to other people and work with them in realtime.",
+        "githubURL": "https://github.com/ajurian/task-board",
+        "liveURL": "https://task-board-urian.vercel.app/",
+        "thumbnailURL": "/images/task_board.png"
+    },
+    {
         "title": "Todo Board",
         "description": "A fullstack web application using Next.js as the frontend, and Supabase as the backend. Supabase provides authentication and database, which makes it easy to make a fullstack application. The reason why I made this project is to be familiar with optimistic updates, which is good for improving user experience.",
         "githubURL": "https://github.com/ajurian/todo-board",
