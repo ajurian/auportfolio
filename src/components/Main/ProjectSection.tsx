@@ -18,16 +18,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
-interface ProjectCardProps {
-    title: string;
-    description: string;
-    githubURL?: string;
-    liveURL?: string;
-    thumbnailURL?: string;
-}
+type ProjectCardProps = (typeof projects)[number];
 
 const ProjectCard = ({
     title,
+    category,
+    technologies,
     description,
     githubURL,
     liveURL,
@@ -40,7 +36,21 @@ const ProjectCard = ({
         <Card className="rounded-none border-x-0 sm:min-w-96 sm:max-w-96 sm:rounded-lg sm:border-x xl:min-w-128 xl:max-w-128">
             <CardHeader>
                 <CardTitle>{title}</CardTitle>
-                <CardDescription>{description}</CardDescription>
+                <CardDescription>
+                    <div>
+                        <span className="font-bold text-card-foreground">
+                            Category:
+                        </span>{" "}
+                        {category}
+                    </div>
+                    <div>
+                        <span className="font-bold text-card-foreground">
+                            Tech Stack:
+                        </span>{" "}
+                        {technologies.join(", ")}
+                    </div>
+                    <div className="my-2">{description}</div>
+                </CardDescription>
             </CardHeader>
             {thumbnailURL && (
                 <CardContent>
@@ -51,7 +61,7 @@ const ProjectCard = ({
                         })}
                         onClick={() =>
                             setIsImageToggled(
-                                (isImageToggled) => !isImageToggled
+                                (isImageToggled) => !isImageToggled,
                             )
                         }
                     >

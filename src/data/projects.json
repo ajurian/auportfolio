@@ -1,6 +1,14 @@
 [
     {
         "title": "TaskBoard",
+        "category": "Fullstack",
+        "technologies": [
+            "Next.js",
+            "React",
+            "Material UI",
+            "MongoDB",
+            "Google Cloud"
+        ],
         "description": "A realtime fullstack web application using Next.js with MongoDB as the database. Greater user experience than 'Todo Board' as it does not requires prompt every edit. Board can be shared to other people and work with them in realtime.",
         "githubURL": "https://github.com/ajurian/task-board",
         "liveURL": "https://task-board-urian.vercel.app/",
@@ -8,6 +16,14 @@
     },
     {
         "title": "Todo Board",
+        "category": "Fullstack",
+        "technologies": [
+            "Next.js",
+            "React",
+            "Material UI",
+            "Supabase",
+            "PostgreSQL"
+        ],
         "description": "A fullstack web application using Next.js as the frontend, and Supabase as the backend. Supabase provides authentication and database, which makes it easy to make a fullstack application. The reason why I made this project is to be familiar with optimistic updates, which is good for improving user experience.",
         "githubURL": "https://github.com/ajurian/todo-board",
         "liveURL": "https://todo-board-ajurian.vercel.app/",
@@ -15,6 +31,8 @@
     },
     {
         "title": "Kripton Admin Dashboard",
+        "category": "Frontend",
+        "technologies": ["React", "Tailwind CSS"],
         "description": "A project that mainly focuses on implementing existing design into react.js with reusable components. This design is from Peterdraw https://www.figma.com/community/file/1222112795133261547.",
         "githubURL": "https://github.com/ajurian/todo-board",
         "liveURL": "https://kripton-admin-dashboard.vercel.app/",
@@ -22,17 +40,23 @@
     },
     {
         "title": "ExpressJS with Json Web Tokens",
+        "category": "Backend",
+        "technologies": ["Node.js", "Express.js"],
         "description": "A project that mainly focuses on backend which handles authentication flow using JWTs for handling sessions.",
         "githubURL": "https://github.com/ajurian/express-jwt"
     },
     {
         "title": "Realtime Chat",
+        "category": "Fullstack",
+        "technologies": ["React", "Material UI", "Node.js", "Socket.IO"],
         "description": "A fullstack chat application that uses web sockets with socket.io to make realtime updates.",
         "githubURL": "https://github.com/ajurian/realtime-chat",
         "thumbnailURL": "/images/realtime_chat.png"
     },
     {
         "title": "React Todo",
+        "category": "Frontend",
+        "technologies": ["React"],
         "description": "A simple website that lets you manage tasks.",
         "githubURL": "https://github.com/ajurian/react-todo",
         "thumbnailURL": "/images/react_todo.png"
