@@ -33,7 +33,7 @@ const ProjectCard = ({
     const isThumbnailPresent = thumbnailURL !== undefined;
 
     return (
-        <Card className="rounded-none border-x-0 sm:min-w-96 sm:max-w-96 sm:rounded-lg sm:border-x xl:min-w-128 xl:max-w-128">
+        <Card className="rounded-none w-full border-x-0 sm:min-w-96 sm:max-w-96 sm:rounded-lg sm:border-x xl:min-w-128 xl:max-w-128">
             <CardHeader>
                 <CardTitle>{title}</CardTitle>
                 <CardDescription>
@@ -49,7 +49,7 @@ const ProjectCard = ({
                         </span>{" "}
                         {technologies.join(", ")}
                     </div>
-                    <div className="my-2">{description}</div>
+                    <p className="my-2 break-words">{description}</p>
                 </CardDescription>
             </CardHeader>
             {thumbnailURL && (
