@@ -1,5 +1,6 @@
 import Providers from "@/components/Providers";
 import { config } from "@fortawesome/fontawesome-svg-core";
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter, Noto_Serif, Roboto_Mono } from "next/font/google";
 
@@ -26,7 +27,10 @@ export default function RootLayout({
             <body
                 className={`${sans.variable} ${serif.variable} ${mono.variable} font-sans dark bg-background text-foreground`}
             >
-                <Providers>{children}</Providers>
+                <Providers>
+                    <Analytics />
+                    {children}
+                </Providers>
             </body>
         </html>
     );
